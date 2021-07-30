@@ -33,10 +33,10 @@ namespace ReactiveHistory
         public IObservable<bool> CanRedo => _canRedo.AsObservable().DistinctUntilChanged();
 
         /// <inheritdoc/>
-        public IObservable<bool> CanClear => CanClear.AsObservable().DistinctUntilChanged();
+        public IObservable<bool> CanClear => _canClear.AsObservable().DistinctUntilChanged();
 
         /// <inheritdoc/>
-        public IObservable<bool> CanSnapshot => CanSnapshot.AsObservable().DistinctUntilChanged();
+        public IObservable<bool> CanSnapshot => _canSnapshot.AsObservable().DistinctUntilChanged();
         
         /// <inheritdoc/>
         public void Snapshot(Action undo, Action redo)
